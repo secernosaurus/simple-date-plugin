@@ -8,6 +8,8 @@
 ## 安装下载
 
 - 下载地址 https://github.com/secernosaurus/simple-date-plugin/releases
+- `npm i simple-date-plugin`
+- CDN http://unpkg.com/simple-date-plugin/release/bundle.js
 
 ## 快速使用
 
