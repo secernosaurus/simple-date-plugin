@@ -4,7 +4,9 @@
   "description": "简单的日期插件，扩展性强",
   "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "release": "webpack",
+    "example": "http-server -p 8880"
   },
   "repository": {
     "type": "git",

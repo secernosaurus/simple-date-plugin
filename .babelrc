@@ -1,6 +1,6 @@
 {
   "presets": [
-    "stage-1"
+    
   ],
   "env": {
     "browser": {
@@ -25,5 +25,8 @@
         ]
       ]
     }
-  }
+  },
+  "plugins": [
+    
+  ]
 }
