@@ -11,10 +11,15 @@
 
 ## 快速使用
 
-简单接入的文档
+```js
+var FC = window.FastCache;
+var cache = new FC();
+cache.set('a', 100);
+alert(cache.get('a'))
+```
 
-- 使用文档
-- 二次开发文档
+- [使用文档](./doc/use/README.md)
+- [二次开发文档](./doc/dev/README.md)
 
 ## 交流 & 提问
 
