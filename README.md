@@ -1,9 +1,13 @@
 # simple-date-plugin
-简单的日期插件，扩展性强
 
 ## 简介
+简单的日期插件，扩展性强
 
-特色（推广的一些亮点）
+- [官网](https://secernosaurus.github.io/)
+
+## 文档
+- [如何使用](./doc/use/README.md)
+- [二次开发](./doc/dev/README.md)
 
 ## 安装下载
 
@@ -19,9 +23,6 @@ var cache = new FC();
 cache.set('a', 100);
 alert(cache.get('a'))
 ```
-
-- [使用文档](./doc/use/README.md)
-- [二次开发文档](./doc/dev/README.md)
 
 ## 交流 & 提问
 
