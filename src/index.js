@@ -3,7 +3,7 @@ class DatePlugin {
     this.list = {};
     this.weekArr = ['周日', '周一', '周二', '周三', '周四', '周五', '周六'];
   }
-  nucleus (today, num) {
+  nucleus (today = new Date(), num = 0) {
     // 获取今天日期
     // let today = new Date();
     let len = num + 42;
