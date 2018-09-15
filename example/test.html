@@ -2,17 +2,155 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>example</title>
+  <title>example</title>
+  <style>
+    /* 开始： 去除默认样式，添加通用样式 */
+		html {
+			font-size: 62.5%;
+		}
+		body {
+			font-size: 1.6rem;
+		}
+		body,h1,h2,h3,h4,h5,h6,p,ul,ol,dl,dd{
+			margin:0;
+			padding: 0;
+		}
+		ul,ol,a{
+			list-style: none;
+			text-decoration: none;
+		}
+		* {
+			box-sizing: border-box;
+		}
+		/* 结束： 去除默认样式，添加通用样式 */
+		div#list {
+			width: 80%;
+			margin: 10px auto;
+			display: flex;
+			flex-direction: column;
+		}
+		#list div {
+			display: flex;
+			justify-content: center;
+		}
+		#list ul {
+			display: flex;
+			justify-content: center;
+		}
+		#list div#calendar{
+			flex-direction: column;
+		}
+		ul li {
+			justify-items: center;
+			height: 50px;
+			line-height: 50px;
+			text-align: center;
+			flex-grow: 1;
+			width: 14%;
+		}
+		.show {
+			display: block;
+		}
+		.hidden {
+			display: none;
+		}
+		.bgcolor {
+			color: #E1E4E7;
+		}
+		/* 上月，下月按钮 */
+		div#header {
+			display: flex;
+			justify-content: space-between;
+		}
+		#header a {
+			width: 14%;
+			text-align: center;
+			cursor: pointer;
+		}
+  </style>
 </head>
 <body>
-	<p>fast-cache test</p>
+  <div id="list" class="show tab">
+  </div>
+
+  <button id="btn">显示日期</button>
+
 
 	<script type="text/javascript" src="../release/bundle.js"></script>
 	<script type="text/javascript">
-		var FC = window.FastCache;
-		var cache = new FC();
-		cache.set('a', 100);
-		alert(cache.get('a'))
+		// 获取类
+		let b = new DatePlugin();
+		// 获取日历对象
+		// console.log(b.set());
+		let doc = b.set();
+		// 获取时间，从星期几开始
+		let gDate = b.list['today'];
+		let number = b.list['number'];
+
+		let itemInner = document.getElementById("list");
+		// let doc = newDate();
+		itemInner.appendChild(doc);
+		let btn = document.getElementById("btn");
+		btn.addEventListener('click', (e) => {
+			e.preventDefault();
+			// 获取样式
+			let classType = itemInner.getAttribute('class');
+			let showIndex = classType.indexOf('show');
+			let hiddenIndex = classType.indexOf('hidden');
+			if (showIndex >= 0) {
+				let start = classType.substring(0, showIndex);
+				let end = classType.substring(showIndex+'show'.length);
+				classType = start + 'hidden' + end;
+			}
+			else {
+				let start = classType.substring(0, hiddenIndex);
+				let end = classType.substring(hiddenIndex+'hidden'.length);
+				classType = start + 'show' + end;
+			}
+			// console.log(itemInner.getAttribute('class'));
+			itemInner.setAttribute('class', classType);
+			console.log(classType);
+		})
+
+		// 获取上下两个按钮
+		let prev = document.querySelector('.prev');
+		let next = document.querySelector('.next');
+		// 获取日历id
+		let calendarId = document.getElementById('calendar');
+		let weekId = document.getElementById('week');
+		let y = gDate.getFullYear();
+		let m = gDate.getMonth();
+		let d = gDate.getDate();
+		prev.addEventListener('click', (e) => {
+			e.preventDefault();
+			calendarId = document.getElementById('calendar');
+			weekId = document.getElementById('week');
+			m--;
+			if (m < 0) {
+				y--;
+				m = 11;
+			}
+			// calendarId.innerHTML = b.nucleus(new Date(y, m, d), 1);
+			itemInner.removeChild(calendarId);
+			itemInner.removeChild(weekId);
+			itemInner.appendChild(b.nucleus(new Date(y, m, d), 0));
+			console.log('prev')
+		})
+		next.addEventListener('click', (e) => {
+			e.preventDefault();
+			calendarId = document.getElementById('calendar');
+			weekId = document.getElementById('week');
+			m++;
+			if (m > 11) {
+				y++;
+				m = 0;
+			}
+			// calendarId.innerHTML = b.nucleus(new Date(y, m, d), 1);
+			itemInner.removeChild(calendarId);
+			itemInner.removeChild(weekId);
+			itemInner.appendChild(b.nucleus(new Date(y, m, d), 1));
+			console.log('next', doc);
+		})
 	</script>
 </body>
 </html>
