@@ -7,6 +7,24 @@
   <meta charset="utf-8" />
   <title>example</title>
   <style>
+    @media screen and (max-width:375PX) {
+      html {
+        font-size: calc(100vw/37.5);
+        background-color: #f6f6f6;
+      }
+      div#list {
+        width: 100%;
+      }
+    }
+    @media screen and (min-width:375PX) {
+      html {
+        font-size: 62.5%;
+        background-color: #f6f6f6;
+      }
+      div#list {
+        width: 80%;
+      }
+    }
     /* 开始： 去除默认样式，添加通用样式 */
 		html {
 			font-size: 62.5%;
@@ -26,7 +44,7 @@
 			box-sizing: border-box;
 		}
 		/* 结束： 去除默认样式，添加通用样式 */
-		div#list {
+		#list {
 			width: 80%;
 			margin: 50px auto;
 			display: flex;
