@@ -1,0 +1,96 @@
+@charset "utf-8";
+@media screen and (max-width:968PX) {
+  html {
+    font-size: calc(100vw/37.5);
+    background-color: #f6f6f6;
+  }
+  div#list {
+    width: 100%;
+  }
+}
+@media screen and (min-width:968PX) {
+  html {
+    font-size: 62.5%;
+    background-color: #f6f6f6;
+  }
+  div#list {
+    width: 80%;
+  }
+}
+/* 开始： 去除默认样式，添加通用样式 */
+html {
+  font-size: 62.5%;
+}
+body {
+  font-size: 1.6rem;
+}
+body,h1,h2,h3,h4,h5,h6,p,ul,ol,dl,dd{
+  margin:0;
+  padding: 0;
+}
+ul,ol,a{
+  list-style: none;
+  text-decoration: none;
+}
+* {
+  box-sizing: border-box;
+}
+/* 结束： 去除默认样式，添加通用样式 */
+#list {
+  width: 80%;
+  margin: 10px auto;
+  display: flex;
+  flex-direction: column;
+}
+#list div {
+  display: flex;
+  justify-content: center;
+}
+#list ul {
+  display: flex;
+  justify-content: center;
+}
+#list div#calendar{
+  flex-direction: column;
+}
+ul li {
+  justify-items: center;
+  text-align: center;
+  flex-grow: 1;
+  width: 14%;
+}
+#list.show {
+  display: block;
+}
+#list.hidden {
+  display: none;
+}
+.bgcolor {
+  color: #E1E4E7;
+}
+/* 上月，下月按钮 */
+div#header {
+  display: flex;
+  justify-content: space-between;
+}
+#header,ul#week {
+  height: 40px;
+  line-height: 40px;
+}
+#header a {
+  width: 14%;
+  text-align: center;
+  cursor: pointer;
+  color: black;
+}
+.calendar {
+  flex-direction: column;
+}
+div#header.center {
+  justify-content: center;
+}
+.sel-color {
+  background-color: #4196F7;
+  border-radius: 50%;
+  color: #ffffff;
+}
