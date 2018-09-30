@@ -3,23 +3,24 @@
 ## 初始化
 
 ```js
-var FC = window.FastCache;
-var cache = new FC();
+// 实例化
+let calendar = new DatePlugin();
+// 生成日历挂载点
+let doc = calendar.setCalendar();
+// 日历挂载到dom之后，初始化事件
+calendar.init();
 ```
 
 ## 设置
 
 ```js
-cache.set('a', 100);
 ```
 
 ## 获取
 
 ```js
-cache.get('a')
 ```
 
 ## 清空
 ```js
-cache.clear()
 ```

@@ -18,10 +18,12 @@
 ## 快速使用
 
 ```js
-var FC = window.FastCache;
-var cache = new FC();
-cache.set('a', 100);
-alert(cache.get('a'))
+<div id="list"></div>
+let calendar = new DatePlugin();
+let doc = calendar.setCalendar();
+let itemInner = document.getElementById("list");
+itemInner.appendChild(doc);
+calendar.init();
 ```
 
 ## 交流 & 提问
