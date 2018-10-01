@@ -130,7 +130,8 @@ div#header.center {
   border-bottom: 1px solid #dddddd;
 }
 .cancel, .determine {
-  padding: 0 10px;
+  width: 14%;
+  text-align: center;
   color: #4196F7;
   cursor: pointer;
 }
