@@ -122,6 +122,7 @@ div#header.center {
   outline: none;
   height: 30px;
   line-height: 30px;
+  padding: 5px 0 5px 10px;
 }
 /* 头部按钮 */
 #list .top-btn {
