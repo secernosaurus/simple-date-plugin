@@ -137,7 +137,7 @@ class DatePlugin {
       // 加加
       this.plusMinus('+');
     })
-    // PC端点击事件，年减减，年加加
+    // 点击事件，年减减，年加加
     prevY.addEventListener('click', (e) => {
       e.preventDefault();
       // 减减
