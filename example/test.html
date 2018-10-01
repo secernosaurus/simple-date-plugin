@@ -9,20 +9,22 @@
   <link rel="stylesheet" href="../src/css/index.css">
 </head>
 <body>
-  <div id="list" class="show tab">
+  <div id="inputValue" class="input-value">
+    <input type="text" placeholder="请选择日期" />
+  </div>
+  <div id="list" class="hidden tab">
 	</div>
 
 	<script type="text/javascript" src="../release/bundle.js"></script>
 	<script type="text/javascript">
 		// 获取类
 		let calendar = new DatePlugin();
-		// 设置日历对象
-    let doc = calendar.setCalendar();
-    // 获取容器
+		// 获取日历对象
+		let doc = calendar.init();
+		// 获取时间，从星期几开始
 		let itemInner = document.getElementById("list");
-    itemInner.appendChild(doc);
-    // 初始化
-		calendar.init();
+		// let doc = newDate();
+		itemInner.appendChild(doc);
 	</script>
 </body>
 </html>
