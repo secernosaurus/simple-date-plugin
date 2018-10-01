@@ -18,12 +18,21 @@
 ## 快速使用
 
 ```js
-<div id="list"></div>
+- 获取日历的输入框
+<div id="inputValue" class="input-value">
+  <input type="text" placeholder="请选择日期" />
+</div>
+- 在页面上有个日历显示框，默认隐藏
+<div id="list" class="hidden">
+</div>
+- 实例化组件
 let calendar = new DatePlugin();
-let doc = calendar.setCalendar();
+- 初始化
+let doc = calendar.init();
+- 获取页面日历显示框
 let itemInner = document.getElementById("list");
+- 将日历添加到日历显示框中
 itemInner.appendChild(doc);
-calendar.init();
 ```
 
 ## 交流 & 提问
