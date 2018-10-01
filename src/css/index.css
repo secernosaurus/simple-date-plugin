@@ -37,6 +37,7 @@ ul,ol,a{
 /* 结束： 去除默认样式，添加通用样式 */
 #list {
   width: 80%;
+  min-width: 280px;
   margin: 10px auto;
   display: flex;
   flex-direction: column;
