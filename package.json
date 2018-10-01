@@ -1,6 +1,6 @@
 {
   "name": "simple-date-plugin",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "简单的日期插件，扩展性强",
   "main": "src/index.js",
   "scripts": {
