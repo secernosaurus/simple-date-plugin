@@ -81,7 +81,7 @@ div#header {
   display: flex;
   justify-content: space-between;
 }
-#header,ul#week.top-btn {
+#header,ul#week,.top-btn {
   height: 40px;
   line-height: 40px;
 }
