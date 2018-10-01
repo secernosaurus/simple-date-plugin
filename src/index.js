@@ -477,3 +477,20 @@ class DatePlugin {
 }
 
 window.DatePlugin = DatePlugin
+
+window.onresize = function(){
+  let header = document.getElementById('header');
+  // 判断当前处于什么端，移动/pc
+  let mobile = /Android|webOS|iPhone|iPod|BlackBerry/i;
+  if (mobile.test(navigator.userAgent)) {
+    document.querySelector('#header .prev-m').style.display = 'none';
+    document.querySelector('#header .next-m').style.display = 'none';
+    header.setAttribute('class', 'center');
+    // return doc;
+  }
+  else {
+    document.querySelector('#header .prev-m').style.display = 'block';
+    document.querySelector('#header .next-m').style.display = 'block';
+    header.setAttribute('class', '');
+  }
+}
